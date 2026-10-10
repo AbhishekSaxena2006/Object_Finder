@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to your ObjectFinder account and access the RBMI Campus Lost &amp; Found platform." />
+  <title>Sign In — ObjectFinder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/auth.css" />
+</head>
+<body class="auth-page">
+
+<!-- Background decorations -->
+<div class="auth-bg-grid"   aria-hidden="true"></div>
+<div class="auth-bg-glow"   aria-hidden="true"></div>
+<div class="auth-bg-glow-2" aria-hidden="true"></div>
+
+<!-- ── Auth Navigation ── -->
+<header class="auth-nav" role="banner">
+  <div class="auth-nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="ObjectFinder – Go to homepage">
+      <div class="nav-logo-icon" aria-hidden="true" style="width:34px; height:34px; font-size:1rem;">🔍</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name" style="font-size:1rem;">ObjectFinder</span>
+        <span class="nav-logo-tagline">RBMI Campus Lost &amp; Found</span>
+      </div>
+    </a>
+    <div style="display:flex; gap:0.5rem; align-items:center;">
+      <span style="font-size:0.82rem; color:var(--clr-muted);">New here?</span>
+      <a href="signup.html" class="btn btn-primary btn-sm" style="border-radius:var(--radius-md);">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<!-- Toast container -->
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+<!-- ── Auth Layout ── -->
+<div class="auth-layout" style="max-width:1050px;">
+
+  <!-- ── Left Panel ── -->
+  <aside class="auth-panel" aria-label="Welcome back">
+    <div class="auth-panel-badge">🎓 RBMI Community</div>
+    <h1 class="auth-panel-title">
+      Welcome <span class="highlight">Back</span>
+    </h1>
+    <p class="auth-panel-desc">
+      Sign in to your ObjectFinder account and continue helping
+      the RBMI campus community.
+    </p>
+
+    <div class="auth-panel-features" aria-label="Platform benefits">
+      <div class="auth-panel-feature">
+        <div class="auth-panel-feature-icon" aria-hidden="true">📋</div>
+        <span class="auth-panel-feature-text">Access your reports and activity</span>
+      </div>
+      <div class="auth-panel-feature">
+        <div class="auth-panel-feature-icon" aria-hidden="true">🔔</div>
+        <span class="auth-panel-feature-text">Get updates on item matches</span>
+      </div>
+      <div class="auth-panel-feature">
+        <div class="auth-panel-feature-icon" aria-hidden="true">🤝</div>
+        <span class="auth-panel-feature-text">Be part of a safer RBMI campus</span>
+      </div>
+    </div>
+
+    <blockquote class="auth-panel-quote">
+      "Lost today, Found tomorrow." — ObjectFinder
+    </blockquote>
+  </aside>
+
+  <!-- ── Right: Auth Card ── -->
+  <main class="auth-main">
+    <div class="auth-card" style="max-width:420px;">
+
+      <div class="auth-card-header">
+        <h2 class="auth-card-title">Sign In</h2>
+        <p class="auth-card-sub">Enter your credentials to continue.</p>
+      </div>
+
+      <!-- Global alert (shown after submit attempt) -->
+      <div class="alert alert-info" id="signin-alert" style="display:none;" role="alert" aria-live="polite">
+        <span class="alert-icon" aria-hidden="true">ℹ</span>
+        <span class="alert-text"></span>
+      </div>
+
+      <form id="signin-form" novalidate aria-label="Sign in form">
+
+        <!-- Username or Email -->
+        <div class="form-group">
+          <label class="form-label" for="si-identifier">
+            Username or Email <span class="required" aria-label="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <span class="input-icon input-icon-left" aria-hidden="true">👤</span>
+            <input
+              type="text"
+              id="si-identifier"
+              name="identifier"
+              class="form-input has-icon-left"
+              placeholder="Enter username or email"
+              autocomplete="username"
+              aria-describedby="hint-si-identifier"
+              aria-required="true"
+            />
+          </div>
+          <div class="form-hint hint-info" id="hint-si-identifier" role="alert" aria-live="polite"></div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.4rem;">
+            <label class="form-label" for="si-password" style="margin-bottom:0;">
+              Password <span class="required" aria-label="required">*</span>
+            </label>
+            <a href="forgot-password.html" class="forgot-link" id="forgot-link" aria-label="Forgot your password?">Forgot Password?</a>
+          </div>
+          <div class="input-wrapper">
+            <span class="input-icon input-icon-left" aria-hidden="true">🔒</span>
+            <input
+              type="password"
+              id="si-password"
+              name="password"
+              class="form-input has-icon-left has-icon-right"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              aria-describedby="hint-si-password"
+              aria-required="true"
+            />
+            <button type="button" class="input-icon input-icon-right" id="toggle-si-password" aria-label="Show password" title="Show/hide password">👁</button>
+          </div>
+          <div class="form-hint hint-info" id="hint-si-password" role="alert" aria-live="polite"></div>
+        </div>
+
+        <!-- Remember me -->
+        <div class="form-group" style="margin-bottom:var(--space-xl);">
+          <label class="form-check" for="si-remember">
+            <input type="checkbox" id="si-remember" name="remember" class="form-check-input" />
+            <span class="form-check-label">Remember me</span>
+          </label>
+        </div>
+
+        <!-- Backend notice -->
+        <div class="demo-notice" role="note">
+          <span class="demo-notice-icon" aria-hidden="true">ℹ</span>
+          <span class="demo-notice-text">
+            <strong>Note:</strong> Credential verification will be handled by the JSP
+            backend when integrated. This is a frontend-only demo.
+          </span>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-submit" id="signin-submit" aria-label="Sign in to your account">
+          Sign In
+        </button>
+
+      </form>
+
+      <p class="auth-footer-link">
+        Don't have an account? <a href="signup.html">Sign Up</a>
+      </p>
+
+    </div>
+  </main>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>
