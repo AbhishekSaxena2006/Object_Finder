@@ -1,277 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Create your ObjectFinder account and join the RBMI campus Lost &amp; Found community." />
+  <meta name="description"
+    content="Create your ObjectFinder account and join the RBMI campus Lost &amp; Found community." />
   <title>Sign Up — ObjectFinder</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/auth.css" />
 </head>
+
 <body class="auth-page">
 
-<!-- Background decorations -->
-<div class="auth-bg-grid"   aria-hidden="true"></div>
-<div class="auth-bg-glow"   aria-hidden="true"></div>
-<div class="auth-bg-glow-2" aria-hidden="true"></div>
+  <!-- Background decorations -->
+  <div class="auth-bg-grid" aria-hidden="true"></div>
+  <div class="auth-bg-glow" aria-hidden="true"></div>
+  <div class="auth-bg-glow-2" aria-hidden="true"></div>
 
-<!-- ── Auth Navigation ── -->
-<header class="auth-nav" role="banner">
-  <div class="auth-nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="ObjectFinder – Go to homepage">
-      <div class="nav-logo-icon" aria-hidden="true" style="width:34px; height:34px; font-size:1rem;">🔍</div>
-      <div class="nav-logo-text">
-        <span class="nav-logo-name" style="font-size:1rem;">ObjectFinder</span>
-        <span class="nav-logo-tagline">RBMI Campus Lost &amp; Found</span>
-      </div>
-    </a>
-    <div style="display:flex; gap:0.5rem; align-items:center;">
-      <span style="font-size:0.82rem; color:var(--clr-muted);">Already have an account?</span>
-      <a href="signin.html" class="btn btn-secondary btn-sm" style="border-radius:var(--radius-md);">Sign In</a>
-    </div>
-  </div>
-</header>
-
-<!-- Toast container -->
-<div class="toast-container" id="toast-container" aria-live="polite"></div>
-
-<!-- ── Auth Layout ── -->
-<div class="auth-layout" style="max-width:1050px;">
-
-  <!-- ── Left panel ── -->
-  <aside class="auth-panel" aria-label="Join ObjectFinder">
-    <div class="auth-panel-badge">🔐 Create Account</div>
-    <h1 class="auth-panel-title">
-      Join <span class="highlight">ObjectFinder</span>
-    </h1>
-    <p class="auth-panel-desc">
-      Create your account and become a part of the RBMI campus community.
-      Report lost or found items in minutes.
-    </p>
-
-    <div class="auth-panel-features" aria-label="Platform features">
-      <div class="auth-panel-feature">
-        <div class="auth-panel-feature-icon" aria-hidden="true">📢</div>
-        <span class="auth-panel-feature-text">Report lost or found items instantly</span>
-      </div>
-      <div class="auth-panel-feature">
-        <div class="auth-panel-feature-icon" aria-hidden="true">🔔</div>
-        <span class="auth-panel-feature-text">Get notified about matching items</span>
-      </div>
-      <div class="auth-panel-feature">
-        <div class="auth-panel-feature-icon" aria-hidden="true">🔒</div>
-        <span class="auth-panel-feature-text">Safe and verified RBMI community</span>
-      </div>
-    </div>
-
-    <blockquote class="auth-panel-quote">
-      "A small step towards a more connected campus."
-    </blockquote>
-  </aside>
-
-  <!-- ── Right: Auth Card ── -->
-  <main class="auth-main">
-    <div class="auth-card auth-card-lg" style="max-width:460px;">
-
-      <!-- ══ View 1: Registration Form ══ -->
-      <div id="signup-main">
-        <div class="auth-card-header">
-          <h2 class="auth-card-title">Create Account</h2>
-          <p class="auth-card-sub">Fill in your details to get started.</p>
+  <!-- ── Auth Navigation ── -->
+  <header class="auth-nav" role="banner">
+    <div class="auth-nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="ObjectFinder – Go to homepage">
+        <div class="nav-logo-icon" aria-hidden="true" style="width:34px; height:34px; font-size:1rem;">🔍</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name" style="font-size:1rem;">ObjectFinder</span>
+          <span class="nav-logo-tagline">RBMI Campus Lost &amp; Found</span>
         </div>
+      </a>
+      <div style="display:flex; gap:0.5rem; align-items:center;">
+        <span style="font-size:0.82rem; color:var(--clr-muted);">Already have an account?</span>
+        <a href="signin.html" class="btn btn-secondary btn-sm" style="border-radius:var(--radius-md);">Sign In</a>
+      </div>
+    </div>
+  </header>
 
-        <form id="signup-form" novalidate aria-label="Registration form">
+  <!-- Toast container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
 
-          <!-- Username -->
-          <div class="form-group">
-            <label class="form-label" for="su-username">
-              Username <span class="required" aria-label="required">*</span>
-            </label>
-            <div class="input-wrapper">
-              <span class="input-icon input-icon-left" aria-hidden="true">👤</span>
-              <input
-                type="text"
-                id="su-username"
-                name="username"
-                class="form-input has-icon-left"
-                placeholder="Only alphabets and spaces allowed"
-                autocomplete="username"
-                maxlength="50"
-                aria-describedby="hint-username"
-                aria-required="true"
-              />
-            </div>
-            <div class="form-hint hint-info" id="hint-username" role="alert" aria-live="polite"></div>
+  <!-- ── Auth Layout ── -->
+  <div class="auth-layout" style="max-width:1050px;">
+
+    <!-- ── Left panel ── -->
+    <aside class="auth-panel" aria-label="Join ObjectFinder">
+      <div class="auth-panel-badge">🔐 Create Account</div>
+      <h1 class="auth-panel-title">
+        Join <span class="highlight">ObjectFinder</span>
+      </h1>
+      <p class="auth-panel-desc">
+        Create your account and become a part of the RBMI campus community.
+        Report lost or found items in minutes.
+      </p>
+
+      <div class="auth-panel-features" aria-label="Platform features">
+        <div class="auth-panel-feature">
+          <div class="auth-panel-feature-icon" aria-hidden="true">📢</div>
+          <span class="auth-panel-feature-text">Report lost or found items instantly</span>
+        </div>
+        <div class="auth-panel-feature">
+          <div class="auth-panel-feature-icon" aria-hidden="true">🔔</div>
+          <span class="auth-panel-feature-text">Get notified about matching items</span>
+        </div>
+        <div class="auth-panel-feature">
+          <div class="auth-panel-feature-icon" aria-hidden="true">🔒</div>
+          <span class="auth-panel-feature-text">Safe and verified RBMI community</span>
+        </div>
+      </div>
+
+      <blockquote class="auth-panel-quote">
+        "A small step towards a more connected campus."
+      </blockquote>
+    </aside>
+
+    <!-- ── Right: Auth Card ── -->
+    <main class="auth-main">
+      <div class="auth-card auth-card-lg" style="max-width:460px;">
+
+        <!-- ══ View 1: Registration Form ══ -->
+        <div id="signup-main">
+          <div class="auth-card-header">
+            <h2 class="auth-card-title">Create Account</h2>
+            <p class="auth-card-sub">Fill in your details to get started.</p>
           </div>
 
-          <!-- Email -->
-          <div class="form-group">
-            <label class="form-label" for="su-email">
-              Email Address <span class="required" aria-label="required">*</span>
-            </label>
-            <div class="input-wrapper">
-              <span class="input-icon input-icon-left" aria-hidden="true">📧</span>
-              <input
-                type="email"
-                id="su-email"
-                name="email"
-                class="form-input has-icon-left"
-                placeholder="Enter your RBMI email or personal email"
-                autocomplete="email"
-                aria-describedby="hint-email"
-                aria-required="true"
-              />
-            </div>
-            <div class="form-hint hint-info" id="hint-email" role="alert" aria-live="polite"></div>
-          </div>
+          <form id="signup-form" novalidate aria-label="Registration form">
 
-          <!-- Password -->
-          <div class="form-group">
-            <label class="form-label" for="su-password">
-              Password <span class="required" aria-label="required">*</span>
-            </label>
-            <div class="input-wrapper">
-              <span class="input-icon input-icon-left" aria-hidden="true">🔒</span>
-              <input
-                type="password"
-                id="su-password"
-                name="password"
-                class="form-input has-icon-left has-icon-right"
-                placeholder="Minimum 8 characters"
-                autocomplete="new-password"
-                aria-describedby="hint-password"
-                aria-required="true"
-              />
-              <button type="button" class="input-icon input-icon-right" id="toggle-password" aria-label="Show password" title="Show/hide password">👁</button>
-            </div>
-            <div class="form-hint hint-info" id="hint-password" role="alert" aria-live="polite"></div>
-
-            <!-- Strength meter -->
-            <div class="password-strength" id="password-strength" aria-label="Password strength">
-              <div class="strength-bar" id="strength-bar" aria-hidden="true">
-                <div class="strength-seg" id="seg-1"></div>
-                <div class="strength-seg" id="seg-2"></div>
-                <div class="strength-seg" id="seg-3"></div>
-                <div class="strength-seg" id="seg-4"></div>
+            <!-- Username -->
+            <div class="form-group">
+              <label class="form-label" for="su-username">
+                Username <span class="required" aria-label="required">*</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon input-icon-left" aria-hidden="true">👤</span>
+                <input type="text" id="su-username" name="username" class="form-input has-icon-left"
+                  placeholder="Only alphabets and spaces allowed" autocomplete="username" maxlength="50"
+                  aria-describedby="hint-username" aria-required="true" />
               </div>
-              <div class="strength-label" id="strength-label" aria-live="polite"></div>
+              <div class="form-hint hint-info" id="hint-username" role="alert" aria-live="polite"></div>
             </div>
-          </div>
 
-          <!-- Confirm Password -->
-          <div class="form-group">
-            <label class="form-label" for="su-confirm-password">
-              Confirm Password <span class="required" aria-label="required">*</span>
-            </label>
-            <div class="input-wrapper">
-              <span class="input-icon input-icon-left" aria-hidden="true">🔑</span>
-              <input
-                type="password"
-                id="su-confirm-password"
-                name="confirm_password"
-                class="form-input has-icon-left has-icon-right"
-                placeholder="Re-enter your password"
-                autocomplete="new-password"
-                aria-describedby="hint-confirm"
-                aria-required="true"
-              />
-              <button type="button" class="input-icon input-icon-right" id="toggle-confirm" aria-label="Show confirm password" title="Show/hide password">👁</button>
+            <!-- Email -->
+            <div class="form-group">
+              <label class="form-label" for="su-email">
+                Email Address <span class="required" aria-label="required">*</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon input-icon-left" aria-hidden="true">📧</span>
+                <input type="email" id="su-email" name="email" class="form-input has-icon-left"
+                  placeholder="Enter your RBMI email or personal email" autocomplete="email"
+                  aria-describedby="hint-email" aria-required="true" />
+              </div>
+              <div class="form-hint hint-info" id="hint-email" role="alert" aria-live="polite"></div>
             </div>
-            <div class="form-hint hint-info" id="hint-confirm" role="alert" aria-live="polite"></div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label class="form-label" for="su-password">
+                Password <span class="required" aria-label="required">*</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon input-icon-left" aria-hidden="true">🔒</span>
+                <input type="password" id="su-password" name="password" class="form-input has-icon-left has-icon-right"
+                  placeholder="Minimum 8 characters" autocomplete="new-password" aria-describedby="hint-password"
+                  aria-required="true" />
+                <button type="button" class="input-icon input-icon-right" id="toggle-password"
+                  aria-label="Show password" title="Show/hide password">👁</button>
+              </div>
+              <div class="form-hint hint-info" id="hint-password" role="alert" aria-live="polite"></div>
+
+              <!-- Strength meter -->
+              <div class="password-strength" id="password-strength" aria-label="Password strength">
+                <div class="strength-bar" id="strength-bar" aria-hidden="true">
+                  <div class="strength-seg" id="seg-1"></div>
+                  <div class="strength-seg" id="seg-2"></div>
+                  <div class="strength-seg" id="seg-3"></div>
+                  <div class="strength-seg" id="seg-4"></div>
+                </div>
+                <div class="strength-label" id="strength-label" aria-live="polite"></div>
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+              <label class="form-label" for="su-confirm-password">
+                Confirm Password <span class="required" aria-label="required">*</span>
+              </label>
+              <div class="input-wrapper">
+                <span class="input-icon input-icon-left" aria-hidden="true">🔑</span>
+                <input type="password" id="su-confirm-password" name="confirm_password"
+                  class="form-input has-icon-left has-icon-right" placeholder="Re-enter your password"
+                  autocomplete="new-password" aria-describedby="hint-confirm" aria-required="true" />
+                <button type="button" class="input-icon input-icon-right" id="toggle-confirm"
+                  aria-label="Show confirm password" title="Show/hide password">👁</button>
+              </div>
+              <div class="form-hint hint-info" id="hint-confirm" role="alert" aria-live="polite"></div>
+            </div>
+
+            <!-- Terms -->
+            <div class="form-group">
+              <label class="form-check" for="su-terms">
+                <input type="checkbox" id="su-terms" name="terms" class="form-check-input"
+                  aria-describedby="hint-terms" />
+                <span class="form-check-label">
+                  I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
+                </span>
+              </label>
+              <div class="form-hint hint-error" id="hint-terms" role="alert" aria-live="polite"></div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn-submit" id="signup-submit" aria-label="Create account">
+              Sign Up
+            </button>
+
+          </form>
+
+          <p class="auth-footer-link">
+            Already have an account? <a href="signin.html">Sign In</a>
+          </p>
+        </div>
+
+        <!-- ══ View 2: Verification Pending ══ -->
+        <div class="verify-screen" id="verify-pending" role="region" aria-label="Email verification pending">
+          <div class="verify-icon-wrap pending" aria-hidden="true">📧</div>
+
+          <h2 class="verify-title">Verification Pending</h2>
+          <p class="verify-desc">
+            In the final version, a verification email would be sent to<br>
+            <strong id="verify-email-display" style="color:var(--clr-white);"></strong>
+          </p>
+
+          <!-- Demo OTP display -->
+          <div class="otp-display" aria-label="Demo verification code" role="img" aria-describedby="otp-note">
+            <div class="otp-box" aria-hidden="true">O</div>
+            <div class="otp-box" aria-hidden="true">F</div>
+            <div class="otp-box" aria-hidden="true">_</div>
+            <div class="otp-box" aria-hidden="true">_</div>
+            <div class="otp-box" aria-hidden="true">_</div>
+            <div class="otp-box" aria-hidden="true">_</div>
+          </div>
+          <div id="otp-note" style="font-size:0.75rem; color:var(--clr-muted); margin-bottom:1rem;">Demo code preview —
+            not a real OTP</div>
+
+          <div class="verify-demo-notice" role="note">
+            <span class="verify-demo-icon" aria-hidden="true">⚠</span>
+            <span class="verify-demo-text">
+              <strong>Frontend Demo Only.</strong> No actual email is sent. Real email
+              verification will be implemented when the JSP backend is integrated.
+            </span>
           </div>
 
-          <!-- Terms -->
-          <div class="form-group">
-            <label class="form-check" for="su-terms">
-              <input type="checkbox" id="su-terms" name="terms" class="form-check-input" aria-describedby="hint-terms" />
-              <span class="form-check-label">
-                I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
-              </span>
-            </label>
-            <div class="form-hint hint-error" id="hint-terms" role="alert" aria-live="polite"></div>
+          <div class="verify-actions">
+            <button type="button" class="btn-submit" id="simulate-verify-btn" style="margin-bottom:0;"
+              aria-label="Simulate email verification">
+              ⚡ Simulate Verification (Demo)
+            </button>
+          </div>
+        </div>
+
+        <!-- ══ View 3: Verification Success ══ -->
+        <div class="verify-screen" id="verify-success" role="region" aria-label="Email verification success">
+          <div class="verify-icon-wrap success" aria-hidden="true">✓</div>
+
+          <h2 class="verify-title">Email Verified!</h2>
+          <p class="verify-desc">
+            Your account has been successfully created (frontend demo). In the live
+            version, your email would be genuinely verified before proceeding.
+          </p>
+
+          <div class="verify-demo-notice" style="background:rgba(34,197,94,0.08); border-color:rgba(34,197,94,0.2);"
+            role="note">
+            <span class="verify-demo-icon" style="color:#4ade80;" aria-hidden="true">✓</span>
+            <span class="verify-demo-text" style="color:#86efac;">
+              <strong>Demo complete.</strong> In production, this step confirms the
+              user's email address via a link sent by the server.
+            </span>
           </div>
 
-          <!-- Submit -->
-          <button type="submit" class="btn-submit" id="signup-submit" aria-label="Create account">
-            Sign Up
-          </button>
+          <div class="verify-actions">
+            <a href="signin.html" class="btn-submit" id="proceed-signin-btn"
+              style="text-align:center; text-decoration:none;" role="button">
+              Proceed to Sign In →
+            </a>
+            <a href="index.html"
+              style="text-align:center; font-size:0.82rem; color:var(--clr-muted); margin-top:0.25rem;">Back to Home</a>
+          </div>
+        </div>
 
-        </form>
-
-        <p class="auth-footer-link">
-          Already have an account? <a href="signin.html">Sign In</a>
-        </p>
       </div>
+    </main>
+  </div>
 
-      <!-- ══ View 2: Verification Pending ══ -->
-      <div class="verify-screen" id="verify-pending" role="region" aria-label="Email verification pending">
-        <div class="verify-icon-wrap pending" aria-hidden="true">📧</div>
-
-        <h2 class="verify-title">Verification Pending</h2>
-        <p class="verify-desc">
-          In the final version, a verification email would be sent to<br>
-          <strong id="verify-email-display" style="color:var(--clr-white);"></strong>
-        </p>
-
-        <!-- Demo OTP display -->
-        <div class="otp-display" aria-label="Demo verification code" role="img" aria-describedby="otp-note">
-          <div class="otp-box" aria-hidden="true">O</div>
-          <div class="otp-box" aria-hidden="true">F</div>
-          <div class="otp-box" aria-hidden="true">_</div>
-          <div class="otp-box" aria-hidden="true">_</div>
-          <div class="otp-box" aria-hidden="true">_</div>
-          <div class="otp-box" aria-hidden="true">_</div>
-        </div>
-        <div id="otp-note" style="font-size:0.75rem; color:var(--clr-muted); margin-bottom:1rem;">Demo code preview — not a real OTP</div>
-
-        <div class="verify-demo-notice" role="note">
-          <span class="verify-demo-icon" aria-hidden="true">⚠</span>
-          <span class="verify-demo-text">
-            <strong>Frontend Demo Only.</strong> No actual email is sent. Real email
-            verification will be implemented when the JSP backend is integrated.
-          </span>
-        </div>
-
-        <div class="verify-actions">
-          <button type="button" class="btn-submit" id="simulate-verify-btn" style="margin-bottom:0;" aria-label="Simulate email verification">
-            ⚡ Simulate Verification (Demo)
-          </button>
-        </div>
-      </div>
-
-      <!-- ══ View 3: Verification Success ══ -->
-      <div class="verify-screen" id="verify-success" role="region" aria-label="Email verification success">
-        <div class="verify-icon-wrap success" aria-hidden="true">✓</div>
-
-        <h2 class="verify-title">Email Verified!</h2>
-        <p class="verify-desc">
-          Your account has been successfully created (frontend demo). In the live
-          version, your email would be genuinely verified before proceeding.
-        </p>
-
-        <div class="verify-demo-notice" style="background:rgba(34,197,94,0.08); border-color:rgba(34,197,94,0.2);" role="note">
-          <span class="verify-demo-icon" style="color:#4ade80;" aria-hidden="true">✓</span>
-          <span class="verify-demo-text" style="color:#86efac;">
-            <strong>Demo complete.</strong> In production, this step confirms the
-            user's email address via a link sent by the server.
-          </span>
-        </div>
-
-        <div class="verify-actions">
-          <a href="signin.html" class="btn-submit" id="proceed-signin-btn" style="text-align:center; text-decoration:none;" role="button">
-            Proceed to Sign In →
-          </a>
-          <a href="index.html" style="text-align:center; font-size:0.82rem; color:var(--clr-muted); margin-top:0.25rem;">Back to Home</a>
-        </div>
-      </div>
-
-    </div>
-  </main>
-</div>
-
-<script src="assets/js/main.js"></script>
-<script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
 </body>
+
 </html>
