@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ObjectFinder — Official Lost &amp; Found portal for RBMI campus community (RBCET, RBCP, RBCM, RBMI, IT). Report lost items, register found belongings, and view reported items." />
+  <meta name="description" content="ObjectFinder — Official Lost &amp; Found portal for RBMI campus community (RBMI, RBCET, RBTTI, RBCP, RBCN). Report lost items, register found belongings, and view reported items." />
   <title>ObjectFinder — RBMI Campus Lost &amp; Found</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -330,7 +330,7 @@
 <!-- ═══════════════════════════════════════════
      SECTION 2: REPORT ITEM
      (Exact fields as sketched:
-      user info: dept [dropdown: RBCET, RBCP, RBCM, RBMI, IT, Other],
+      user info: dept [dropdown: RBMI, RBCET, RBTTI, RBCP, RBCN, Other],
       year/position [faculty, hod, etc], contact no.
       * year - in case of student
       Item info: name of items, description [eg color, shape, etc.])
@@ -369,7 +369,7 @@
             <span class="input-hint-msg" id="hint-r-name"></span>
           </div>
 
-          <!-- Department dropdown — As per sketch list: RBCET, RBCP, RBCM, RBMI, IT, Other -->
+          <!-- Department dropdown — RBMI, RBCET, RBTTI, RBCP, RBCN, Other -->
           <div>
             <label for="r-dept" class="field-label">
               <span>Department (dept) <span class="required">*</span></span>
@@ -567,7 +567,7 @@
             <span class="input-hint-msg" id="hint-reg-name"></span>
           </div>
 
-          <!-- Department dropdown — RBCET, RBCP, RBCM, RBMI, IT, Other -->
+          <!-- Department dropdown — RBMI, RBCET, RBTTI, RBCP, RBCN, Other -->
           <div>
             <label for="reg-dept" class="field-label">
               <span>Department (dept) <span class="required">*</span></span>
@@ -738,7 +738,7 @@
       <h2 class="section-title" id="view-section-title">View Reported Items</h2>
       <div class="section-underline" aria-hidden="true"></div>
       <p class="section-sub">
-        Browse all lost and found reports across RBMI departments (RBCET, RBCP, RBCM, RBMI, IT).
+        Browse all lost and found reports across RBMI campus institutions (RBMI, RBCET, RBTTI, RBCP, RBCN).
         Filter by status or department, or search by item description.
       </p>
     </header>
@@ -764,7 +764,7 @@
         <input type="search" id="items-search-input" class="search-input" placeholder="Search by item name, color, location..." aria-label="Search items" />
       </div>
 
-      <!-- Department Filter Dropdown (RBCET, RBCP, RBCM, RBMI, IT, Other) -->
+      <!-- Department Filter Dropdown (RBMI, RBCET, RBTTI, RBCP, RBCN, Other) -->
       <div class="dept-filter-select-wrap">
         <select id="items-dept-filter" class="dept-filter-select" aria-label="Filter by department">
           <option value="all">All Departments</option>
@@ -889,7 +889,7 @@
           </div>
         </a>
         <p class="footer-brand-tagline">
-          Official campus Lost &amp; Found portal for RBCET, RBCP, RBCM, RBMI, and IT departments.
+          Official campus Lost &amp; Found portal for RBMI, RBCET, RBTTI, RBCP, and RBCN institutions.
         </p>
       </div>
 
