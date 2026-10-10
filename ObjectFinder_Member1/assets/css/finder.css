@@ -6,16 +6,34 @@
 
 /* ── Nav highlight for View Reported Items (as per sketch) ── */
 .nav-link-highlight {
-  background: rgba(200, 32, 47, 0.15) !important;
-  color: #ff99a0 !important;
-  border: 1px solid rgba(200, 32, 47, 0.35);
+  background: rgba(200, 32, 47, 0.16) !important;
+  color: #fca5a5 !important;
+  border: 1px solid rgba(200, 32, 47, 0.35) !important;
   font-weight: 600 !important;
 }
 
 .nav-link-highlight:hover {
-  background: var(--clr-red) !important;
-  color: var(--clr-white) !important;
-  box-shadow: var(--shadow-red);
+  background: rgba(200, 32, 47, 0.28) !important;
+  color: #ffffff !important;
+  border-color: rgba(200, 32, 47, 0.55) !important;
+  box-shadow: 0 0 16px rgba(200, 32, 47, 0.35) !important;
+  transform: translateY(-1px);
+}
+
+.nav-link-highlight.active {
+  background: rgba(200, 32, 47, 0.32) !important;
+  color: #ffffff !important;
+  border-color: rgba(248, 113, 113, 0.65) !important;
+  box-shadow: 
+    0 4px 20px rgba(200, 32, 47, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    0 0 18px rgba(239, 68, 68, 0.4) !important;
+  font-weight: 700 !important;
+}
+
+.nav-link-highlight.active::after {
+  background: #ffffff !important;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9) !important;
 }
 
 /* ── Home: About Report & Register cards ── */
