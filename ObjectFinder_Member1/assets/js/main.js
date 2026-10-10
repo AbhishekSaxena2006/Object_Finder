@@ -288,3 +288,109 @@ const Toast = (() => {
 
 /* ── Expose Toast globally ── */
 window.Toast = Toast;
+
+/* ── Global Anti-Copy, Anti-Select & Content Protection ── */
+(function initAntiCopyProtection() {
+  let lastToastTime = 0;
+
+  function notifyBlocked() {
+    const now = Date.now();
+    if (now - lastToastTime > 2500) {
+      lastToastTime = now;
+      if (window.Toast && typeof window.Toast.show === 'function') {
+        window.Toast.show('⚠️ Content copying is disabled on this website.', 'error', 2500);
+      }
+    }
+  }
+
+  // 1. Disable Right Click (Context Menu) globally across whole website
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    notifyBlocked();
+    return false;
+  }, { capture: true });
+
+  // 2. Disable text selection via mouse/touch on all non-input elements
+  document.addEventListener('selectstart', (e) => {
+    const tag = e.target.tagName;
+    if (tag !== 'INPUT' && tag !== 'TEXTAREA') {
+      e.preventDefault();
+      return false;
+    }
+  }, { capture: true });
+
+  // 3. Disable copy and cut events globally
+  document.addEventListener('copy', (e) => {
+    e.preventDefault();
+    if (e.clipboardData) {
+      e.clipboardData.clearData();
+    }
+    notifyBlocked();
+    return false;
+  }, { capture: true });
+
+  document.addEventListener('cut', (e) => {
+    e.preventDefault();
+    notifyBlocked();
+    return false;
+  }, { capture: true });
+
+  // 4. Disable dragging of images, text, and elements
+  document.addEventListener('dragstart', (e) => {
+    e.preventDefault();
+    return false;
+  }, { capture: true });
+
+  // 5. Intercept keyboard shortcuts: Ctrl+C, Ctrl+X, Ctrl+A (outside inputs), Ctrl+U, Ctrl+S, F12, DevTools
+  document.addEventListener('keydown', (e) => {
+    const isCtrlOrCmd = e.ctrlKey || e.metaKey;
+    const key = e.key ? e.key.toLowerCase() : '';
+    const isInput = e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA';
+
+    // Block Copy (Ctrl+C / Cmd+C)
+    if (isCtrlOrCmd && key === 'c') {
+      e.preventDefault();
+      notifyBlocked();
+      return false;
+    }
+
+    // Block Cut (Ctrl+X / Cmd+X)
+    if (isCtrlOrCmd && key === 'x') {
+      e.preventDefault();
+      notifyBlocked();
+      return false;
+    }
+
+    // Block Select All (Ctrl+A / Cmd+A) outside form fields
+    if (isCtrlOrCmd && key === 'a' && !isInput) {
+      e.preventDefault();
+      return false;
+    }
+
+    // Block View Source (Ctrl+U / Cmd+U)
+    if (isCtrlOrCmd && key === 'u') {
+      e.preventDefault();
+      notifyBlocked();
+      return false;
+    }
+
+    // Block Save Page (Ctrl+S / Cmd+S)
+    if (isCtrlOrCmd && key === 's') {
+      e.preventDefault();
+      return false;
+    }
+
+    // Block F12 (DevTools)
+    if (e.key === 'F12' || e.keyCode === 123) {
+      e.preventDefault();
+      return false;
+    }
+
+    // Block DevTools shortcuts (Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C)
+    if (isCtrlOrCmd && e.shiftKey && (key === 'i' || key === 'j' || key === 'c')) {
+      e.preventDefault();
+      return false;
+    }
+  }, { capture: true });
+})();
+
