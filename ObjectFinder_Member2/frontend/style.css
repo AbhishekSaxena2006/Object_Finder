@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6fc;
+    margin: 0;
+    padding: 40px;
+}
+
+h1 {
+    color: #1e3a8a;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    color: #444;
+}
+
+h2 {
+    color: #2563eb;
+    margin-top: 40px;
+}
+
+a {
+    color: white;
+    background-color: #2563eb;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #1e3a8a;
+}
+/* Home Page */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6fc;
+    margin: 0;
+    padding: 30px;
+}
+
+h1 {
+    color: #1e3a8a;
+    text-align: center;
+}
+
+p {
+    color: #444;
+    font-size: 18px;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #1e3a8a;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    color: #bfdbfe;
+}
+/* Hero Section */
+
+.hero {
+    text-align: center;
+    background-color: white;
+    padding: 50px 20px;
+    margin-top: 30px;
+}
+
+.hero h2 {
+    font-size: 35px;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.hero a {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.hero a:hover {
+    background-color: #1e3a8a;
+}
+/* Quick Actions */
+
+.actions {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.actions h2 {
+    color: #1e3a8a;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.action-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.action-card {
+    background-color: white;
+    width: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.action-card h3 {
+    color: #2563eb;
+}
+
+.action-card p {
+    color: #555;
+    line-height: 1.5;
+}
+
+.action-card a {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.action-card a:hover {
+    background-color: #1e3a8a;
+}
