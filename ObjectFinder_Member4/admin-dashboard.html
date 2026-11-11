@@ -1,0 +1,467 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ObjectFinder | Admin Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b1120;
+            color: white;
+        }
+
+        .sidebar {
+            width: 245px;
+            height: 100vh;
+            background: #151f32;
+            border-right: 1px solid #334155;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 25px 18px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .logo span {
+            color: #3b82f6;
+        }
+
+        .sidebar h4 {
+            color: #64748b;
+            font-size: 12px;
+            margin: 20px 10px 12px;
+            text-transform: uppercase;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 13px 12px;
+            color: #cbd5e1;
+            text-decoration: none;
+            border-radius: 7px;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .main {
+            margin-left: 245px;
+            padding: 30px;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .topbar p {
+            color: #94a3b8;
+            margin-top: 7px;
+        }
+
+        .admin-label {
+            background: #263650;
+            padding: 10px 16px;
+            border-radius: 20px;
+            color: #93c5fd;
+            font-size: 13px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 35px;
+        }
+
+        .stat-card {
+            background: #151f32;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 22px;
+        }
+
+        .stat-card p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .stat-card h2 {
+            font-size: 30px;
+            margin-top: 12px;
+        }
+
+        .blue {
+            border-left: 4px solid #3b82f6;
+        }
+
+        .red {
+            border-left: 4px solid #ef4444;
+        }
+
+        .yellow {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .green {
+            border-left: 4px solid #22c55e;
+        }
+
+        .section {
+            background: #151f32;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 22px;
+            margin-bottom: 25px;
+            scroll-margin-top: 20px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            color: #94a3b8;
+            font-size: 13px;
+            margin: -10px 0 18px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 550px;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #334155;
+            font-size: 13px;
+        }
+
+        th {
+            color: #93c5fd;
+        }
+
+        td {
+            color: #cbd5e1;
+        }
+
+        .status {
+            padding: 6px 10px;
+            border-radius: 15px;
+            font-size: 11px;
+        }
+
+        .pending {
+            background: #422f16;
+            color: #fbbf24;
+        }
+
+        .matched {
+            background: #172e50;
+            color: #60a5fa;
+        }
+
+        .resolved {
+            background: #123a2b;
+            color: #4ade80;
+        }
+
+        .match-card {
+            padding: 17px;
+            background: #0b1120;
+            border: 1px solid #334155;
+            border-radius: 9px;
+            margin-bottom: 13px;
+        }
+
+        .match-card h3 {
+            color: #60a5fa;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .match-card p {
+            color: #94a3b8;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .match-score {
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            color: #64748b;
+            padding: 20px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 950px) {
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 18px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar Navigation -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            Object<span>Finder</span>
+        </div>
+
+        <h4>Main Menu</h4>
+
+        <a href="#overview" class="active">Dashboard</a>
+        <a href="#lost-items">View Reports</a>
+        <a href="#found-items">Registered Items</a>
+        <a href="#matches">AI Matching Results</a>
+        <a href="#resolved">Resolved Items</a>
+
+        <h4>Account</h4>
+
+        <a href="admin-login.html">Logout</a>
+
+    </aside>
+
+
+    <!-- Main Dashboard -->
+
+    <main class="main">
+
+        <header class="topbar" id="overview">
+
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p>Manage lost and found items efficiently.</p>
+            </div>
+
+            <div class="admin-label">
+                Administrator
+            </div>
+
+        </header>
+
+
+        <!-- Statistics Cards -->
+
+        <div class="stats">
+
+            <div class="stat-card blue">
+                <p>Total Lost Reports</p>
+                <h2>--</h2>
+            </div>
+
+            <div class="stat-card red">
+                <p>Found Items</p>
+                <h2>--</h2>
+            </div>
+
+            <div class="stat-card yellow">
+                <p>Potential Matches</p>
+                <h2>--</h2>
+            </div>
+
+            <div class="stat-card green">
+                <p>Resolved Cases</p>
+                <h2>--</h2>
+            </div>
+
+        </div>
+
+
+        <!-- Lost Items -->
+
+        <section class="section" id="lost-items">
+
+            <h2>Reported Lost Items</h2>
+
+            <p class="section-description">
+                Review items reported missing by users.
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item ID</th>
+                            <th>Item Name</th>
+                            <th>Location</th>
+                            <th>Lost Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="5">
+                                No lost-item records loaded yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+
+        <!-- Found Items -->
+
+        <section class="section" id="found-items">
+
+            <h2>Registered Found Items</h2>
+
+            <p class="section-description">
+                Review items submitted by people who found them.
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item ID</th>
+                            <th>Item Name</th>
+                            <th>Found Location</th>
+                            <th>Found Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="5">
+                                No found-item records loaded yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+
+        <!-- Matching Results -->
+
+        <section class="section" id="matches">
+
+            <h2>AI Matching Results</h2>
+
+            <p class="section-description">
+                Potential matches between reported lost items
+                and registered found items.
+            </p>
+
+            <div class="match-card">
+                <h3>No matching results available</h3>
+                <p>
+                    Matching results will appear here once
+                    the matching engine is implemented and
+                    item records are available.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Resolved Items -->
+
+        <section class="section" id="resolved">
+
+            <h2>Resolved / Handled Items</h2>
+
+            <p class="section-description">
+                Track items successfully handed over to their owners.
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item ID</th>
+                            <th>Item Name</th>
+                            <th>Owner</th>
+                            <th>Resolution Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="5">
+                                No resolved cases available yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+
+        <div class="footer">
+            Â© 2026 ObjectFinder | Admin Management System
+        </div>
+
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
